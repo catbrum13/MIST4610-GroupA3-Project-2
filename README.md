@@ -43,7 +43,9 @@ The relationships between these entities create a structured database where cust
 
 *sale_date* Dates appear in multiple formats and must be standardized to a single format.   
 
-*customer_info* Not in first normal form. Names need to be split and loyalty, guest, and student flags need to be separated.   
+*customer_info* Not in first normal form. Names need to be split and loyalty, guest, and student flags need to be separated.
+
+
 *payment_method* Card names vary in case and include abbreviations.    
 
 *sku* SKU values appear in inconsistent case.    
