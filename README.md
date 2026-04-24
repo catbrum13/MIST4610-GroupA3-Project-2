@@ -37,48 +37,48 @@ The relationships between these entities create a structured database where cust
 
 *line_id* Prefix “LN-” is unnecessary and should be removed.  
 
-order_id Prefixes “UORD-” and “CORD-” should be removed. Country indicators (C/U) are stored elsewhere.  
+*order_id* Prefixes “UORD-” and “CORD-” should be removed. Country indicators (C/U) are stored elsewhere.  
 
-employee_ref Prefixes “EMU-” and “EMC-” should be removed. Country indicators are redundant.   
+*employee_ref* Prefixes “EMU-” and “EMC-” should be removed. Country indicators are redundant.   
 
-sale_date Dates appear in multiple formats and must be standardized to a single format.   
+*sale_date* Dates appear in multiple formats and must be standardized to a single format.   
 
-customer_info Not in first normal form. Names need to be split and loyalty, guest, and student flags need to be separated.   
+*customer_info* Not in first normal form. Names need to be split and loyalty, guest, and student flags need to be separated.   
+*payment_method* Card names vary in case and include abbreviations.    
 
-payment_method Card names vary in case and include abbreviations.    
+*sku* SKU values appear in inconsistent case.    
 
-sku SKU values appear in inconsistent case.    
+*category* Not in first normal form; some products contain multiple categories.    
 
-category Not in first normal form; some products contain multiple categories.    
+*unit_price* Currency symbols must be separated into a dedicated currency column.   
 
-unit_price Currency symbols must be separated into a dedicated currency column.   
+*discount* Inconsistent formats (e.g., “10%” vs “promo5”).   
 
-discount Inconsistent formats (e.g., “10%” vs “promo5”).   
+*tax* Mixed formats: some values are percentages, others are absolute amounts.  
 
-tax Mixed formats: some values are percentages, others are absolute amounts.  
+*line_total* Some values include a dollar sign while others do not.  
 
-line_total Some values include a dollar sign while others do not.  
+*return_flag* Contains blank rows.  
 
-return_flag Contains blank rows.  
-
-customer_email Varying cases, some of which are stored as different values. This is redundant as Email addresses are not case sensitive.  
+*customer_email* Varying cases, some of which are stored as different values. This is redundant as Email addresses are not case sensitive.  
 
   
 
 ### Product_Supplier_Master Dataset   
 
-sku SKU values not in consistent case.   
+*sku* SKU values not in consistent case.   
 
-category Not in first normal form. Multiple categories listed in a single field.  
+*category* Not in first normal form. Multiple categories listed in a single field.  
 
-vendor_phone Phone numbers appear in multiple formats.  
+*vendor_phone* Phone numbers appear in multiple formats.  
 
-vendor_rep Full name must be split into first name and last name.  
+*vendor_rep* Full name must be split into first name and last name.  
 
-cost and list_price Currency symbols should be separated from numeric values.  
+*cost* and *list_price* Currency symbols should be separated from numeric values.  
 
-pack_size Inconsistent formatting; (e.g., 12-pack, case of 6, etc.).  
+*pack_size* Inconsistent formatting; (e.g., 12-pack, case of 6, etc.).  
 
-weight and length Units vary (e.g., “kilograms” vs “kg”).  
+*weight* and *length* Units vary (e.g., “kilograms” vs “kg”).  
+
 ## Data Cleaning Process
 ## Queries 
