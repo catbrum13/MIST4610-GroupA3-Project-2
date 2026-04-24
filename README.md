@@ -82,5 +82,62 @@ The relationships between these entities create a structured database where cust
 
 *weight* and *length* Units vary (e.g., “kilograms” vs “kg”).  
 
-## Data Cleaning Process
+## Data Cleaning Process  
+1. Sales_Dump Dataset  
+
+*line_id* Removed the "LN-" prefix using a string‑replace function; retained only the numeric portion.  
+
+*order_id* Stripped "UORD-" and "CORD-" prefixes; extracted only the order number since country codes are stored elsewhere.  
+
+*employee_ref* Removed "EMU-" and "EMC-" prefixes; standardized the field to a clean employee ID.  
+
+*sale_date* Parsed all date formats and converted them into a single ISO format (YYYY-MM-DD).  
+
+*customer_info* Split full name into first name and last name columns. Extracted embedded flags (loyalty, guest, student) into separate columns.  
+
+
+*payment_method* Standardized all values to consistent title case and expanded abbreviations (e.g., “MC” → “Mastercard”).  
+
+*sku* Converted all SKU values to uppercase for consistency.  
+
+*category* Split multi‑category entries into separate rows.  
+
+*unit_price* Removed currency symbols and stored numeric values in unit_price; created a new currency column populated from the symbol.  
+
+*discount* Standardized all discounts to a numeric percentage (e.g., "promo5" → 5%).  
+
+*tax* Converted all tax values to a single format (tax rate).    
+
+*line_total* Removed dollar signs and converted all values to numeric type.   
+
+*return_flag* Replaced blank values with assumed ‘N’.  
+
+  
+
+2. Product_Supplier_Master Dataset  
+
+*sku* Standardized all SKU values to uppercase.  
+
+*category* Split multi‑category entries into separate rows.  
+
+*vendor_phone* Reformatted all phone numbers into a single standard format.  
+
+*vendor_rep* Split full name into first name and last name.  
+
+*cost* and *list_price* Removed currency symbols and stored numeric values only; added a currency column.  
+
+*pack_size* Standardized all pack size descriptions into a consistent format.  
+
+*weight* and *length* Reformatted to ensure consistency.  
+
+ 
+
+Data Cleaning Actions Recommended  
+
+*weight* and *length* A standard unit of measurement should be agreed upon for data storage purposes. If necessary, a conversion unit entity can be created for quick conversions into the dominant currency of the data system.  
+
+*size_or_weight* We have assumed this data is specifically extracted and stored for packaging purposes. In this case, we recommend standardized packaging size/weight parameters be established so that each product may be sorted into a ProductSizing classes (such as small, medium, large, etc.)  
+
+*EmployeeFname, EmployeeLname, EmployeeEmail, ManagerFNname, ManagerLname, ManagerEmail* Attributes were created with the assumption that each Employee and Manager ID corresponds to an existing Manager and Employee with the mentioned characteristics. Storing this data would be sensible and relevant on performant tasks such as performance reviews.  
+
 ## Queries 
