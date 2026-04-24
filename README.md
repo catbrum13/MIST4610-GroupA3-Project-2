@@ -130,9 +130,10 @@ The relationships between these entities create a structured database where cust
 
 *weight* and *length* Reformatted to ensure consistency.  
 
- 
+### Data Cleaning Process  
+We prompted OpenAI to fix the issues we previously mentioned in our Data Quality Assesment. We had it create a file with the raw columns and the clean colums. From there, we manually went through the file to fix any issues the AI had missed. Most of this was spliting columns to ensure first normal form. Other issues were small, such as AI not realized that "promo5" meant 5% and not $5. We manually fixed these issues.  
 
-Data Cleaning Actions Recommended  
+### Data Cleaning Actions Recommended  
 
 *weight* and *length* A standard unit of measurement should be agreed upon for data storage purposes. If necessary, a conversion unit entity can be created for quick conversions into the dominant currency of the data system.  
 
