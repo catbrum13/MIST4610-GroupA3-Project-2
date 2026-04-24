@@ -10,17 +10,17 @@ Because the business is still growing, much of its operational data is maintaine
 
 ## Conceptual Model 
 
-The conceptual model organizes Northline Outfitters’ retail data into separate normalized entities to improve data organization, reduce redundancy, and maintain data integrity. Each entity contains attributes that describe the data being stored, and each entity includes a primary identifier used to uniquely distinguish each record.
-The Customer entity stores customer-related attributes such as customer name, email, and loyalty information. The primary identifier for this entity is Customer_ID. One customer may place multiple orders.
-The Order entity stores order-level attributes including sale date, shipping information, and payment details. The primary identifier is Order_ID. Each order belongs to one customer and is processed by one employee.
-The Order_Line entity stores line-item transaction details such as quantity, unit price, discount, tax, and line total. The primary identifier is Line_ID. This entity connects orders and products, allowing one order to contain multiple purchased items.
-The Employee entity stores employee information for individuals who process customer orders. The primary identifier is Employee_ID. Each employee may process many orders.
-The Manager entity stores manager information and uses Manager_ID as its primary identifier. One manager may supervise multiple employees.
+The conceptual model organizes Northline Outfitters’ retail data into separate normalized entities to improve data organization, reduce redundancy, and maintain data integrity. Each entity contains attributes that describe the data being stored, and each entity includes a primary identifier used to uniquely distinguish each record.  
+The Customer entity stores customer-related attributes such as customer name, email, and loyalty information. The primary identifier for this entity is Customer_ID. One customer may place multiple orders.  
+The Order entity stores order-level attributes including sale date, shipping information, and payment details. The primary identifier is Order_ID. Each order belongs to one customer and is processed by one employee.  
+The Order_Line entity stores line-item transaction details such as quantity, unit price, discount, tax, and line total. The primary identifier is Line_ID. This entity connects orders and products, allowing one order to contain multiple purchased items.  
+The Employee entity stores employee information for individuals who process customer orders. The primary identifier is Employee_ID. Each employee may process many orders.  
+The Manager entity stores manager information and uses Manager_ID as its primary identifier. One manager may supervise multiple employees.  
 The Product entity stores product-related attributes including SKU, product description, pricing, cost, and inventory details. The primary identifier is Product_ID. A product may appear in multiple order lines.
-The Vendor entity stores supplier information such as vendor name, phone number, and representative. The primary identifier is Vendor_ID. One vendor may supply many products.
-The Category entity stores product category classifications. The primary identifier is Category_ID. One category may include multiple products.
-The Payment_Method entity stores accepted payment types for transactions. The primary identifier is Payment_Method_ID. One payment method may be associated with multiple orders.
-The relationships between these entities create a structured database where customers place orders, employees process orders, managers supervise employees, orders contain multiple order lines, products appear in order lines, vendors supply products, and categories classify products.
+The Vendor entity stores supplier information such as vendor name, phone number, and representative. The primary identifier is Vendor_ID. One vendor may supply many products.  
+The Category entity stores product category classifications. The primary identifier is Category_ID. One category may include multiple products.  
+The Payment_Method entity stores accepted payment types for transactions. The primary identifier is Payment_Method_ID. One payment method may be associated with multiple orders.  
+The relationships between these entities create a structured database where customers place orders, employees process orders, managers supervise employees, orders contain multiple order lines, products appear in order lines, vendors supply products, and categories classify products.  
 
 ## Data Quality Assessment
 ## Data Cleaning Process
