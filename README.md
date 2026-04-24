@@ -113,7 +113,6 @@ The relationships between these entities create a structured database where cust
 *return_flag* Replaced blank values with assumed ‘N’.  
 
   
-
 2. Product_Supplier_Master Dataset  
 
 *sku* Standardized all SKU values to uppercase.  
