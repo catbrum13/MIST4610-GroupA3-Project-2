@@ -1,8 +1,8 @@
 ## MIST 4610 Project 2 - Group A3
-Catherine Brumbeloe- Group Leader 
-Camryn Copeland- SQL Writer 
-Joseph Halab- Database Wrangler 
-Diya Mopur- Database Designer
+Catherine Brumbeloe- Group Leader  
+Camryn Copeland- SQL Writer  
+Joseph Halab- Database Wrangler   
+Diya Mopur- Database Designer  
 
 ## Case Summary
 Northline Outfitters is a small online retail company that sells student-focused lifestyle and technology accessories, including apparel, backpacks, water bottles, keyboards, phone cases, and other related products. The company purchases merchandise from outside vendors and sells directly to customers in the United States and Canada.
