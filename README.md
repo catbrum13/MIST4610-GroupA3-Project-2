@@ -33,7 +33,7 @@ The Payment_Method entity stores accepted payment types for transactions. The pr
 The relationships between these entities create a structured database where customers place orders, employees process orders, managers supervise employees, orders contain multiple order lines, products appear in order lines, vendors supply products, and categories classify products.  
 
 ## Data Quality Assessment
-### 1. Sales_Dump Dataset  
+### Sales_Dump Dataset  
 
 *line_id* Prefix “LN-” is unnecessary and should be removed.  
 
@@ -83,7 +83,7 @@ The relationships between these entities create a structured database where cust
 *weight* and *length* Units vary (e.g., “kilograms” vs “kg”).  
 
 ## Data Cleaning Process  
-1. Sales_Dump Dataset  
+### Sales_Dump Dataset Cleaning  
 
 *line_id* Removed the "LN-" prefix using a string‑replace function; retained only the numeric portion.  
 
@@ -112,8 +112,8 @@ The relationships between these entities create a structured database where cust
 
 *return_flag* Replaced blank values with assumed ‘N’.  
 
-  
-2. Product_Supplier_Master Dataset  
+
+### Product_Supplier_Master Dataset Cleaning  
 
 *sku* Standardized all SKU values to uppercase.  
 
