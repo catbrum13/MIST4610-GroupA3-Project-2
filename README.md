@@ -143,7 +143,8 @@ We prompted OpenAI to fix the issues we previously mentioned in our Data Quality
 ## Queries 
 ### 1. Which products generated the highest total sales revenue by country?  
 Business Justification Description:  
-This query helps the business see which products are making the most money in each country. Because customers in different countries may buy different products, this helps the company make better decisions about inventory, pricing, and marketing.  
+This query helps the business see which products are making the most money in each country. Because customers in different countries may buy different products, this helps the company make better decisions about inventory, pricing, and marketing.
+
 SELECT  
     o.ShipCountryCode,  
     ol.SKU,  
@@ -157,6 +158,7 @@ ORDER BY o.ShipCountryCode, TotalSalesRevenue DESC;
 ### 2. Which employees handled the largest number of orders, and how do they compare with employees under the same manager?  
 Business Description:  
 This query helps managers understand employee performance fairly. Instead of only looking at total orders, it compares employees against others who report to the same manager.  
+
 SELECT e.ManagerID, e.EmployeeID, e.EmployeeFname, e.EmployeeLname, COUNT(o.OrderID) AS NumberOfOrders  
 FROM EMPLOYEE e JOIN `ORDER` o  
     ON e.EmployeeID = o.EmployeeID  
@@ -166,6 +168,7 @@ ORDER BY e.ManagerID, NumberOfOrders DESC;
 ### 3. Which vendors supply products that appear in more than one category?  
 Business Description:  
 This query helps identify vendors that support multiple product categories. These vendors may be more valuable because the business can use them for broader purchasing needs and possibly negotiate better terms.  
+
 SELECT v.VendorID, v.VendorName, COUNT(DISTINCT p.CategoryID) AS NumberOfCategories  
 FROM VENDOR v JOIN PRODUCT p  
     ON v.VendorID = p.VendorID  
@@ -175,7 +178,8 @@ ORDER BY NumberOfCategories DESC;
 
 ### 4. Which product categories generate the most total sales?  
 Business Description:  
-This query helps the company understand which product categories are the strongest revenue drivers. This can guide purchasing decisions, promotions, and future product expansion.  
+This query helps the company understand which product categories are the strongest revenue drivers. This can guide purchasing decisions, promotions, and future product expansion. 
+
 SELECT c.CategoryName, SUM(ol.LineTotal) AS TotalSales  
 FROM ORDER_LINE ol JOIN PRODUCT p  
     ON ol.SKU = p.SKU  
@@ -187,6 +191,7 @@ ORDER BY TotalSales DESC;
 ### 5. Which employees generate the highest average order value?  
 Business Description:  
 This query shows which employees are handling higher-value orders, not just more orders. This is useful because an employee with fewer orders may still be producing stronger revenue results.  
+
 SELECT e.EmployeeID, e.EmployeeFname, e.EmployeeLname, AVG(OrderTotals.OrderValue) AS AverageOrderValue  
 FROM EMPLOYEE e JOIN `ORDER` o  
     ON e.EmployeeID = o.EmployeeID  
@@ -199,12 +204,12 @@ ORDER BY AverageOrderValue DESC;
 
 ### 6. Which vendors generate the most revenue from the products they supply?  
 Business Description:  
-This query helps the business evaluate vendors based on sales performance. Vendors connected to higher revenue products may be worth prioritizing for stronger partnerships, better pricing, or larger future orders.  
+This query helps the business evaluate vendors based on sales performance. Vendors connected to higher revenue products may be worth prioritizing for stronger partnerships, better pricing, or larger future orders. 
+
 SELECT v.VendorID, v.VendorName, SUM(ol.LineTotal) AS TotalRevenue  
 FROM VENDOR v JOIN PRODUCT p  
-    ON v.VendorID = p.VendorID  
-JOIN ORDER_LINE ol  
-    ON p.SKU = ol.SKU  
+ON v.VendorID = p.VendorID  
+JOIN ORDER_LINE ol ON p.SKU = ol.SKU    
 GROUP BY v.VendorID, v.VendorName  
 ORDER BY TotalRevenue DESC;  
 
